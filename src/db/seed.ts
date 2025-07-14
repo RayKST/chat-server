@@ -18,6 +18,12 @@ await seed(db, schema).refine((f) => {
         name: f.firstName(),
         description: f.loremIpsum(),
       },
+    },
+    message: {
+      count: 50,
+      columns: {
+        content: f.loremIpsum(),
+      },
     }
   }
 })
