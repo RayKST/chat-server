@@ -8,8 +8,10 @@ import {
 } from "fastify-type-provider-zod";
 import { env } from "./env.ts";
 import { createChatRoute } from "./http/routes/create-chat.ts";
+import { createMessageRoute } from "./http/routes/create-message.ts";
 import { createUserRoute } from "./http/routes/create-user.ts";
 import { getChatRoute } from "./http/routes/get-chat.ts";
+import { getMessageRoute } from "./http/routes/get-message.ts";
 import { getUserRoute } from "./http/routes/get-user.ts";
 
 
@@ -27,8 +29,10 @@ app.setValidatorCompiler(validatorCompiler);
 // Route register
 app.register(createChatRoute);
 app.register(createUserRoute);
+app.register(createMessageRoute);
 app.register(getChatRoute);
 app.register(getUserRoute);
+app.register(getMessageRoute);
 
 
 // Health and start server
