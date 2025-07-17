@@ -22,10 +22,12 @@ export const getMessageRoute: FastifyPluginCallbackZod = (app) => {
                 select({
                     id: schema.message.id,
                     content: schema.message.content,
-                    userId: schema.message.userId,              // later change to return username not the id
+                    userId: schema.message.userId,
+                    userName: schema.user.name,
                     createAt: schema.message.createdAt,
                 }).
                 from(schema.message).
+                innerJoin(schema.user, eq(schema.message.userId, schema.user.id)).
                 where(eq(schema.message.chatId, chatId)).
                 orderBy(schema.message.createdAt);
 
