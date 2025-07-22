@@ -15,6 +15,13 @@
       "when": 1752530623820,
       "tag": "0001_flowery_spitfire",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1753223348766,
+      "tag": "0002_nappy_zodiak",
+      "breakpoints": true
     }
   ]
 }
