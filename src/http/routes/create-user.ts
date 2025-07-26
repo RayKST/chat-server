@@ -19,10 +19,6 @@ export const createUserRoute: FastifyPluginCallbackZod = (app) => {
     async (request, reply) => {
       const { name, description, password } = request.body
 
-      if (!(name && password)) {
-        return reply.status(400).send({ error: 'Username and password are required.' })
-      }
-
       const hashedPassword = await bcrypt.hash(password, 10)
 
       const result = await db
@@ -37,7 +33,7 @@ export const createUserRoute: FastifyPluginCallbackZod = (app) => {
       const insertedUser = result[0]
 
       if (!insertedUser) {
-        throw new Error('Failed to create new room.')
+        throw new Error('Failed to create new user.')
       }
 
       return reply.status(201).send({ userId: insertedUser.id })

@@ -13,6 +13,7 @@ import { createUserRoute } from "./http/routes/create-user.ts";
 import { getChatRoute } from "./http/routes/get-chat.ts";
 import { getMessageRoute } from "./http/routes/get-message.ts";
 import { getUserRoute } from "./http/routes/get-user.ts";
+import { verifyLoginRoute } from "./http/routes/login.ts";
 
 
 // App setup
@@ -33,6 +34,7 @@ app.register(createMessageRoute);
 app.register(getChatRoute);
 app.register(getUserRoute);
 app.register(getMessageRoute);
+app.register(verifyLoginRoute);
 
 
 // Health and start server
