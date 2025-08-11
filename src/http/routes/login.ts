@@ -6,7 +6,7 @@ import { db } from '../../db/connection.ts';
 import { schema } from '../../db/schema/index.ts';
 
 export const verifyLoginRoute: FastifyPluginCallbackZod = (app) => {
-    app.get('/user/login',{
+    app.post('/user/login',{
           schema: {
             body: z.object({
               name: z.string().min(1),
